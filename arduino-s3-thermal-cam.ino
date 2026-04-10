@@ -1,4 +1,6 @@
 /**
+ *  Théodore Coutu
+ *  2026-04-09
  *
  *  This project implements a thermal imaging camera using ESP32-S3 and
  *  MLX90640 thermal imaging sensor.
@@ -11,7 +13,8 @@
  *  288 x 216 with 24 pixels on the right for a color scale bar, and a
  *  32 pixel info bar at the bottom, showing min, max, and avg temperatures
  *  for the current frame, and the temperature for the selected pixel, which
- *  can be changed by touching the screen. The colors scale automatically.
+ *  can be changed by touching the screen. The colours scale automatically, 
+ *  across the entire 16-bit RGB colour scale using a custom function.
  *  
  */
 
@@ -317,8 +320,8 @@ void write_text_to_display()
 
   // deg C in the middle of the color scale
   main_canvas.setTextDatum(TR_DATUM);
-  main_canvas.drawString("C", 306, 120);
-  main_canvas.drawCircle(298, 120, 2);
+  main_canvas.drawString("C", 306, 108);
+  main_canvas.drawCircle(296, 106, 2, TFT_WHITE);
 
 
   // print min, max, avg temps
